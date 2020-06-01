@@ -11,6 +11,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/checkSession', routes.checkSession);
+app.get('/classes', routes.getClasses);
+
+app.post('/classes', routes.postClasses);
+
+app.patch('/classes', routes.patchClasses);
+
+app.get('user', routes.getUser);
+
+app.post('user', routes.postUser);
+
+app.patch('user', routes.patchUser);
 
 app.listen(port, () => { console.log(`Now listening on port ${port}`)})

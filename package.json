@@ -4,7 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack --mode=production && node server/index.js",
+    "start:dev": "nodemon server/index.js",
+    "build": "webpack --mode=production",
+    "build:dev": "webpack -w -d",
+    "db:init": "psql postgres -a -q -f database/schema.sql",
+    "test": "jest --coverage --colors",
+    "test:watch": "jest --watch --coverage --colors"
+
   },
   "repository": {
     "type": "git",
